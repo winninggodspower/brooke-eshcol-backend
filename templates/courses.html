@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% load static %}
+    <title>Services|Brookee-Shcol</title>
+
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/css/courses.css">
+
+{% endblock head %}
+
+{% block body %}
+
+
+    <header class="position-relative">
+
+        {% include "page-section/navbar.html" %}
+
+        <section id="hero-section">
+
+            <form action="" id="search-form" method="POST" class="h-100 d-flex align-items-center justiry-content-center mx-auto px-2 " role="form">
+
+                <div class="input-group">
+                    <span class="input-group-text bg-white " id="search-icon-wrapper"><img
+                            src="../static/assets/img/search-icon.png" class="ms-2" alt=""></span>
+                    <input type="search" class="form-control text-danger border-start-0" id="search-box"
+                        placeholder="Search for a preffered course">
+                </div>
+
+            </form>
+
+        </section>
+        
+    </header>
+
+    <section id="services-list-container" class=" px-5 mx-auto">
+        <div class="w-100 d-flex justify-content-between">
+            <a href="#" class="services-list text-dark text-decoration-none">Training</a>
+            <a href="#" class="services-list text-dark text-decoration-none">IT supplies</a>
+            <a href="#" class="services-list text-dark text-decoration-none">IT solutions</a>
+        </div>
+    </section>
+
+    <main class="container">
+
+       <section class="row justify-content-between">
+
+        <div class="col-12 col-md-4 mx-auto border course-container">
+            <p class="text-danger ps-2 pt-2">Computer Appreciation/ Application</p>
+            <div class="d-flex">
+                <img class="mx-auto course-img" src="../static/assets/courses-images/computer-appreciation.png" alt="">
+            </div>
+            <button class="enroll-btn btn btn-danger bg-danger d-block w-100">Enroll Now!!</button>
+        </div>
+
+        <div class="col-12 col-md-4 mx-auto border course-container">
+            <p class="text-danger ps-2 pt-2">Web Development</p>
+            <div class="d-flex">
+                <img class="mx-auto course-img" src="../static/assets/courses-images/web-development.png" alt="">
+            </div>
+            <button class="enroll-btn btn btn-danger bg-danger d-block w-100">Enroll Now!!</button>
+        </div>
+
+        <div class="col-12 col-md-4 mx-auto border course-container">
+            <p class="text-danger ps-2 pt-2">UI/UX</p>
+            <div class="d-flex">
+                <img class="mx-auto course-img" src="../static/assets/courses-images/ui-ux.png" alt="">
+            </div>
+            <button class="enroll-btn btn btn-danger bg-danger d-block w-100">Enroll Now!!</button>
+        </div>
+
+        <div class="col-12 col-md-4 mx-auto border course-container">
+            <p class="text-danger ps-2 pt-2">Web Design</p>
+            <div class="d-flex">
+                <img class="mx-auto course-img" src="../static/assets/courses-images/web-design.png" alt="">
+            </div>
+            <button class="enroll-btn btn btn-danger bg-danger d-block w-100">Enroll Now!!</button>
+        </div>
+
+        <div class="col-12 col-md-4 mx-auto border course-container">
+            <p class="text-danger ps-2 pt-2">Graphics Design</p>
+            <div class="d-flex">
+                <img class="mx-auto course-img" src="../static/assets/courses-images/graphics-design.png" alt="">
+            </div>
+            <button class="enroll-btn btn btn-danger bg-danger d-block w-100">Enroll Now!!</button>
+        </div>
+
+        <div class="col-12 col-md-4 mx-auto border course-container">
+            <p class="text-danger ps-2 pt-2">Gis / Remote Sensing</p>
+            <div class="d-flex">
+                <img class="mx-auto course-img" src="../static/assets/courses-images/gis.png" alt="">
+            </div>
+            <button class="enroll-btn btn btn-danger bg-danger d-block w-100">Enroll Now!!</button>
+        </div>
+
+        <div class="col-12 col-md-4 mx-auto border course-container">
+            <p class="text-danger ps-2 pt-2">Web Design</p>
+            <div class="d-flex">
+                <img class="mx-auto course-img" src="../static/assets/courses-images/web-design.png" alt="">
+            </div>
+            <button class="enroll-btn btn btn-danger bg-danger d-block w-100">Enroll Now!!</button>
+        </div>
+
+        <div class="col-12 col-md-4 mx-auto border course-container">
+            <p class="text-danger ps-2 pt-2">Andriod Development</p>
+            <div class="d-flex">
+                <img class="mx-auto course-img" src="../static/assets/courses-images/web-design.png" alt="">
+            </div>
+            <button class="enroll-btn btn btn-danger bg-danger d-block w-100">Enroll Now!!</button>
+        </div>
+
+        <div class="col-12 col-md-4 mx-auto border course-container">
+            <p class="text-danger ps-2 pt-2">Embedded System</p>
+            <div class="d-flex">
+                <img class="mx-auto course-img" src="../static/assets/courses-images/embedded-system.png" alt="">
+            </div>
+            <button class="enroll-btn btn btn-danger bg-danger d-block w-100">Enroll Now!!</button>
+        </div>
+
+       </section>
+
+    </main>
+
+    {% include "page-section/footer.html" %}
+
+    <script src="../static/js/library/jquery-3.6.0.js"></script>
+    <script src="../static/js/image-slider.js"></script>
+
+{% endblock body %}

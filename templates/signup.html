@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    {% load static %}
+
+    <title>Join us|Brookee-Shcol</title>
+    <link rel="stylesheet" href="../static/css/signup.css">
+
+{% endblock head %}
+
+{% block body %}
+
+    <main class="row">
+        <div class="col-12 col-md mx-md-4 vh-md-100 d-flex flex-column justify-content-center">
+            <div>
+                <div class="w-100 d-flex flex-column justify-content-center align-items-center">
+                    <img class="mx-auto" src="../static/assets/img/brooke-eschol-square-logo.png" alt="" width="120px" height="100px">
+                    <p class="text-center create-account-text">Create an account</p>
+                </div>
+                    
+
+                {% comment %} the form for registering {% endcomment %}
+                <form class="mx-5" action="{% url 'register' %}" method="POST" role="form">
+                    {% csrf_token %}
+
+                    {% comment %} looping through the form field in django {% endcomment %}
+                    {% for field in form %}
+
+                    <div class="form-wrapper form-group ">
+                        {{ field }}
+                        
+                        {% if field.errors %}
+                        <div id="invalidCheck3Feedback" class="ps-1 invalid-feedback">
+                            
+                            {% for error in field.errors %}
+                                <p class="p-0 m-0">{{ error }}</p>
+                            {% endfor %}
+                                
+                          </div>
+                        {% endif %}
+                            
+                    </div>
+
+                    {% endfor %}
+
+                   <div class="form-wrapper">
+                        <button type="submit" id="signup-btn" class="btn btn-primary bg-primary w-100">Sign up</button>
+                   </div>
+                </form>
+
+                <div class="or text-center" style="margin-top: 16px; margin-bottom: 16px;">-or-</div>
+
+
+                <div class="text-center d-flex justify-content-center">
+                    <div class="icon-container border rounded">
+                       <img src="../static/assets/img/google-icon.png" alt="">
+                    </div>
+                    <div class="icon-container border rounded">
+                       <img src="../static/assets/img/facebook-icon.png" alt="">
+                    </div>
+                    <div class="icon-container border rounded">
+                        <img src="../static/assets/img/apple-icon.png" alt="">
+                    </div>
+                </div>
+
+                <p class="text-center" style="margin-top: 17px;">
+                    Aready have an account? <a class="fw-bolder text-decoration-none text-dark underline" href="{% url 'login' %}">Sign in</a>
+                </p>
+            </div>
+                
+        </div>
+        <div class="col-12 col-md bg-primary vh-100 w-100 d-none d-md-flex align-items-center justify-content-center">
+            <div>
+                <img class="" src="../static/assets/img/signup-illustration.png" alt="" width="500px" height="430px">
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
