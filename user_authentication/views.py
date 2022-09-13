@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib import messages
+from django.core.mail import send_mail
+import secrets
+from django.template.loader import render_to_string
+
 
 # modules needed for user authentication
 from django.contrib.auth import authenticate, login, logout
@@ -16,21 +20,30 @@ from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 
+#for verifying email
+from verify_email.email_handler import send_verification_email
+
+
 from django.conf import settings
 
 # importing the use model
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
+from .models import Subscriber #importing the newsletter model
 
 # importing the forms
-from .forms import LoginForm, RegisterForm
+from .forms import LoginForm, RegisterForm, SubscriberForm
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'index.html',)
+    newsLetterForm = SubscriberForm()
+    return render(request, 'index.html', {'newsletterForm': newsLetterForm})
 
+def services(request):
+    newsLetterForm = SubscriberForm()
+    return render(request, 'services.html', {'newsletterForm': newsLetterForm})
 
 
 # routes for user registration
@@ -40,7 +53,10 @@ def register(request):
 
         if form.is_valid():
             # form.save only works when form is created from a model
-            form.save()
+            inactive_user = send_verification_email(request, form)
+            # print(inactive_user.cleaned_data['email']); print(inactive_user.cleaned_data)
+
+            # form.save()
             messages.success(request, 'succesfully created account')
             return redirect('login')
         else:
@@ -112,7 +128,7 @@ def password_reset_request(request):
                     subject = "Password Reset Requested"
                     email_template_name = "password/password_reset_email.txt"
                     email_content = {
-                    "email":user.email,
+                    "email": user.email,
                     'domain': settings.DOMAIN,
                     'site_name': settings.SITE_NAME,
                     "uid": urlsafe_base64_encode(force_bytes(user.pk)),
@@ -130,3 +146,28 @@ def password_reset_request(request):
                 messages.error(request, 'email not found in our database')
     password_reset_form = PasswordResetForm()
     return render(request=request, template_name="password/password_reset.html", context={"password_reset_form":password_reset_form})
+
+
+
+def newSubscriber(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        
+        # checking if email has already been subscribed to news letter
+        if Subscriber.objects.filter(email = email):
+                messages.error(request, "Email already subscribed to our newsletter")
+                return redirect('home')
+
+        sub = SubscriberForm(request.POST)
+        if sub.is_valid():
+           
+            messages.success(request, "You've succcessfully subcribed to our newsletter")
+            sub.save()
+        else:
+            for error in sub.errors.as_json():
+                print(error)
+
+            messages.error(request, "invalid email address")
+        
+    
+    return redirect('home')

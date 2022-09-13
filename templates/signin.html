@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 
 {% block head %}
+    {% load socialaccount %}
+    {% load static %}
 
     <title>Login|Brookee-Shcol</title>
 
@@ -42,7 +44,7 @@
 
                 <div class="text-center d-flex justify-content-center">
                     <div class="icon-container border rounded">
-                       <img src="../static/assets/img/google-icon.png" alt="">
+                       <a href="{% provider_login_url 'google' %}"><img src="../static/assets/img/google-icon.png" alt=""></a>
                     </div>
                     <div class="icon-container border rounded">
                        <img src="../static/assets/img/facebook-icon.png" alt="">
@@ -61,7 +63,7 @@
         <div class="col-12 col-md bg-primary vh-100 w-100 d-none d-md-flex align-items-center justify-content-center">
             <div class="mx-5">
                 <img class="" src="../static/assets/img/red-quote.png" alt="" width="47" height="57">
-                <h4 class="skill-never-expires-text text-white display-1 border-bottom">Skills Never Expires</h4>
+                <h4 class="skill-never-expires-text text-white display-1 border-bottom">Skill Never Expires</h4>
                 <p class="text-light">Knowledge is not a skill, <br>
                     knowledge plus ten thousand times is a skill</p>
             </div>

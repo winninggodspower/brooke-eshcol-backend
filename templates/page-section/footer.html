@@ -9,13 +9,14 @@
                 <div class="row mx-auto mx-md-initail ">
 
                     <div class="col-md-3 text-center text-md-start mb-3">
-                        <form>
+                        <form method="post" action="{% url 'newsub' %}">
+                            {% csrf_token %}
                             <h5 class="footer-header">Our Newsletter</h5>
                             <p>Subscribe to our newsletter</p>
                             <div class="d-flex flex-column flex-sm-row w-100 gap-2">
                                 <label for="newsletter" class="visually-hidden">Email address</label>
-                                <input id="newsletter" type="email" class="form-control rounded-0 text-light" placeholder="">
-                                <button class="btn btn-danger bg-danger rounded-0  border-0" type="button">Subscribe</button>
+                                <input id="newsletter" type="email"  name="email"  class="form-control rounded-0 text-light" placeholder="">
+                                <button class="btn btn-danger bg-danger rounded-0  border-0" type="submit">Subscribe</button>
                             </div>
                         </form>
                     </div>
@@ -33,7 +34,7 @@
                     </div>
 
                     <div class="col-12 col-md-2 text-center text-md-start mb-3">
-                        <h5 class="footer-header">Service</h5>
+                        <h5 class="footer-header">Services</h5>
                         <ul class="nav flex-column footer-header-content">
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white ">Onine Courses</a></li>
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white ">Trainings</a></li>

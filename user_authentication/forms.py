@@ -1,6 +1,9 @@
+from dataclasses import field
 from django import forms
 from django.forms import ModelForm 
 from django.contrib.auth.forms import UserCreationForm
+
+from .models import Subscriber
 
 # import the model here to populate the form
 from django.contrib.auth import get_user_model
@@ -48,4 +51,14 @@ class RegisterForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+class SubscriberForm(ModelForm):
+    email = forms.EmailField( required=True, widget=forms.EmailInput(attrs={'class':'form-control rounded-0 text-light'}))
+    class Meta:
+        model = Subscriber
+        fields = ('email',)
+
+    # email = forms.EmailField(label='Your email',
+    #                          max_length=100,
+    #                          widget=forms.EmailInput(attrs={'class': 'form-control rounded-0 text-light'}))
 

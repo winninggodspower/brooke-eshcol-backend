@@ -1,0 +1,6 @@
+'Thank you for signing up for my email newsletter! <br>
+Please complete the process by <br>
+<a href="{{ verification_url }}"> clicking here to 
+    confirm your registration</a>.'.format(request.build_absolute_uri('/confirm/'),
+sub.email,
+sub.conf_num)
