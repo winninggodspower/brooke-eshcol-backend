@@ -49,7 +49,7 @@ header{
     border: 1px solid #A00716 !important;
 }
  
- .hero-btns .btn:first-of-type{
+ .hero-btns .btn:first-child{
      background-color: #A00716 !important;
  }
 
