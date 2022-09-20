@@ -22,7 +22,7 @@ SECRET_KEY = 'django-insecure-a&2heu37huz!f(94b91v%%x^y5dwfzq@7*c0j(m3w4lse*c)4+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'www.brookeshcol.com','http://brookeeshcol.com']
 
 
 # Application definition
@@ -129,7 +129,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DOMAIN = '127.0.0.1:8000'
-SITE_NAME = 'brookeshcol'
+SITE_NAME = 'brookeshcol.com'
 PROTOCOL = 'http'
 
 # settings for verifying email
@@ -139,7 +139,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_ID') if not DEBUG else 'winninggodspower@gmail.com' 
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PW') if not DEBUG else 'ot1t1gb1'
 
-DEFAULT_FROM_EMAIL = 'winninggodspower@gmail.com'
+DEFAULT_FROM_EMAIL = 'contact@brookeshcol.com'
 
 
 
@@ -155,7 +155,7 @@ AUTH_USER_MODEL = 'user_authentication.User'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    BASE_DIR / 'static/'
 ]
 
 # login settings
