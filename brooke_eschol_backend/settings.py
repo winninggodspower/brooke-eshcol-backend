@@ -22,7 +22,7 @@ SECRET_KEY = 'django-insecure-a&2heu37huz!f(94b91v%%x^y5dwfzq@7*c0j(m3w4lse*c)4+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'brookeeshcol.com', 'www.brookeeshcol.com']
+ALLOWED_HOSTS = ['localhost', 'brookeeshcol.com', 'www.brookeeshcol.com']
 
 
 # Application definition
@@ -126,7 +126,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # Email sending password
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 DOMAIN = '127.0.0.1:8000'
 SITE_NAME = 'brookeshcol.com'
@@ -136,12 +136,12 @@ PROTOCOL = 'http'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_ID') if not DEBUG else 'winninggodspower@gmail.com' 
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PW') if not DEBUG else 'ot1t1gb1'
+EMAIL_HOST_USER = os.environ.get('EMAIL_ID')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PW')
 
 DEFAULT_FROM_EMAIL = 'contact@brookeshcol.com'
 
-
+HTML_MESSAGE_TEMPLATE = "verify_email/email_message.html"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

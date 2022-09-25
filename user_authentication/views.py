@@ -58,7 +58,7 @@ def register(request):
 
             # form.save()
             messages.success(request, 'succesfully created account')
-            return redirect('login')
+            return redirect('verification_email_sent')
         else:
 
             # adding the is-invalid class to field with errors
@@ -171,3 +171,6 @@ def newSubscriber(request):
         
     
     return redirect('home')
+
+def verification_email_sent(request):
+    return render(request, "verify_email/email_sent.html")
