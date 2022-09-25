@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <title>404|Brookeshcol</title>
+{% endblock %}
+
+{% block body %}
+    <div class="vh-100 d-flex flex-column">
+        {% include 'page-section/navbar.html' %}
+        <div class="flex-grow-1 justify-self-center text-center">
+            <h2>404 not found</h2>
+            <p>The page you are looking for is not found </p>
+            <p>Return to <a href="{% url 'home' %}">home page</a></p>
+        </div>
+        
+    </div>
+{% endblock %}

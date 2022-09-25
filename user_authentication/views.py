@@ -174,3 +174,9 @@ def newSubscriber(request):
 
 def verification_email_sent(request):
     return render(request, "verify_email/email_sent.html")
+
+
+def error_404_view(request, exception):
+       
+    # we add the path to the the 404.html file
+    return render(request, '404.html')
