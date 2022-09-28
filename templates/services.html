@@ -15,6 +15,7 @@
 
         {% include "page-section/navbar.html" %}
 
+
         <section class="hero-section container row mx-auto w-100">
 
             <div class="hero-text col-12 col-md h-100 d-flex align-items-center">
@@ -26,7 +27,9 @@
                     <p id="hero-ptext" class="text-dark">Our services cuts across creating IT solutions,  suppliing IT gadgets to
                         large and small companies and most importantly, IT trainings.</p>
                     <div class="hero-btns d-flex d-md-block justify-content-center">
-                        <button class="btn btn-danger me-md-4">Talk to us</button>
+                       <a href="tel:+2348123902721" class="text-decoration-none">
+                        <button class="btn btn-danger me-md-4" style=" background-color: #A00716 !important;">Talk to us</button>
+                       </a>
                     </div>
                 </div>
 
@@ -69,7 +72,7 @@
                     courses including hardware, software and design trainings. Project based learning is what we solely focus on.
                 </p>
                 <div class="hero-btns d-flex d-md-block justify-content-center mt-19">
-                    <a href="./courses.html" class="btn btn-danger me-md-4 fw-bold p-auto d-flex align-items-center justify-content-center">View courses</a>
+                    <a href="{% url 'courses' %}" class="btn btn-danger me-md-4 fw-bold p-auto d-flex align-items-center justify-content-center">View courses</a>
                 </div>
             </div>
             <div class="col-12 col-md d-none d-md-block">
@@ -90,7 +93,7 @@
                     Hardware supplies for company and personal usage gadgets at very affordable prices both in bulk and single sale purchases.  Original and trustworthy gadget with long term guarantee 
                 </p>
                 <div class="hero-btns d-flex d-md-block justify-content-center mt-19">
-                    <a href="./courses.html" class="btn btn-danger me-md-4 fw-bold p-auto d-flex align-items-center justify-content-center">View supplies</a>
+                    <a href="{% url 'home' %}" class="btn btn-danger me-md-4 fw-bold p-auto d-flex align-items-center justify-content-center">View supplies</a>
                 </div>
             </div>
         </div>
@@ -105,7 +108,7 @@
                     We  build usable, Friendly and universally acceptable product for both individual purposes and compoanies 
                 </p>
                 <div class="hero-btns d-flex d-md-block justify-content-center mt-19">
-                    <a href="./courses.html" class="btn btn-danger me-md-4 fw-bold p-auto d-flex align-items-center justify-content-center">View solution</a>
+                    <a href="{% url 'home' %}" class="btn btn-danger me-md-4 fw-bold p-auto d-flex align-items-center justify-content-center">View solution</a>
                 </div>
             </div>
             <div class="col-12 col-md d-none d-md-block">
@@ -171,6 +174,11 @@
             <img src="../static/assets/img/border-img-2.png" alt="">
         </div>
     </section>
+    <style>
+        .service-container .hero-btns a{
+            background-color: #A00716 !important;
+        }
+    </style>
 
     {% include "page-section/footer.html" %}
 

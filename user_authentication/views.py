@@ -45,6 +45,9 @@ def services(request):
     newsLetterForm = SubscriberForm()
     return render(request, 'services.html', {'newsletterForm': newsLetterForm})
 
+def courses(request):
+    return render(request, 'courses.html')
+
 
 # routes for user registration
 def register(request):
