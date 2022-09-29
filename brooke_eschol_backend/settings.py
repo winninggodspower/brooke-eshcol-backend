@@ -20,7 +20,7 @@ MESSAGE_TAGS = {
 SECRET_KEY = 'django-insecure-a&2heu37huz!f(94b91v%%x^y5dwfzq@7*c0j(m3w4lse*c)4+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', 'brookeeshcol.com', 'www.brookeeshcol.com']
 
@@ -37,8 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'user_authentication',
 
-    # "whitenoise.runserver_nostatic",
-
     'crispy_forms',
     "verify_email.apps.VerifyEmailConfig",
 
@@ -52,7 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # "whitenoise.middleware.WhiteNoiseMiddleware", 
+    "whitenoise.middleware.WhiteNoiseMiddleware", 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -63,7 +61,7 @@ MIDDLEWARE = [
 
 
 #Whitenoise setting
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 ROOT_URLCONF = 'brooke_eschol_backend.urls'
 

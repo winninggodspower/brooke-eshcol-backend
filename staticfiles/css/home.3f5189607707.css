@@ -1,4 +1,4 @@
-@import url(./main.css);
+@import url("./main.d4068472cc40.css");
 
 html{
     scroll-behavior: smooth;
@@ -87,7 +87,7 @@ header{
  .about-section{
     padding-top: 19px;
     padding-bottom: 77px;
-    background: url("../assets/img/mision-vision-bg.png");
+    background: url("../assets/img/mision-vision-bg.7beb4bac9271.png");
     background-clip: border-box;
  }
 
@@ -244,7 +244,7 @@ header{
 
 
 #connect-and-grow{
-    background: url('../assets/img/connect-and-grow-bg.png'),rgba(160, 7, 22, 0.38);
+    background: url("../assets/img/connect-and-grow-bg.8cf6310f5560.png"),rgba(160, 7, 22, 0.38);
     background-blend-mode:darken;
     height: 500px;
     margin-top: 45px;
