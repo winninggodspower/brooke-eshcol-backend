@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'user_authentication',
 
     'crispy_forms',
+    "phonenumber_field",
     "verify_email.apps.VerifyEmailConfig",
 
     'allauth',

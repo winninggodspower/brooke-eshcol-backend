@@ -33,7 +33,7 @@ User = get_user_model()
 from .models import Subscriber #importing the newsletter model
 
 # importing the forms
-from .forms import LoginForm, RegisterForm, SubscriberForm
+from .forms import LoginForm, RegisterForm, SubscriberForm, MemberForm
 
 # Create your views here.
 
@@ -178,6 +178,25 @@ def newSubscriber(request):
 def verification_email_sent(request):
     return render(request, "verify_email/email_sent.html")
 
+def members(request):
+    if request.method == "POST":
+        form = MemberForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Successfully Beecomed a member of Brookeeshcol system limited")
+            return redirect("home")
+
+        else:
+             # adding the is-invalid class to field with errors
+            for field in form.errors:
+                print(field)
+                form[field].field.widget.attrs['class'] += ' is-invalid'
+
+            return render(request, 'member.html', {'form': form})
+
+    form = MemberForm()
+    return render(request, 'member.html', {"form": form})
 
 def error_404_view(request, exception):
        

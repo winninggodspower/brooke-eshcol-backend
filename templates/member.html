@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% load static %}
+
+<title>Become A Member|Brookee-Shcol</title>
+
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/member.css' %}">
+<!-- <link rel="stylesheet" href="../static/css/services.css"> -->
+
+{% endblock %}
+{% block body %}
+
+    {% include "page-section/navbar.html" %}
+
+<div class="container mt-5">
+
+    <form action="{% url 'members' %}" method="post" class="row g-3">
+        {% csrf_token %}
+        
+        <div class="col-md-6">
+            <label for="validationServer01" class="form-label">First name</label>
+            <!-- <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required> -->
+            {{ form.first_name }}
+            {% if form.first_name.errors %}
+                {% for error in form.first_name.errors %}
+                    <div id="validationServer03Feedback" class="invalid-feedback">
+                        {{error}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationServer02" class="form-label">Last name</label>
+            <!-- <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required> -->
+            {{ form.last_name }}
+            {% if form.last_name.errors %}
+                {% for error in form.last_name.errors %}
+                    <div id="validationServer03Feedback" class="invalid-feedback">
+                        {{error}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label for="validationServer02" class="form-label">Email</label>
+            <!-- <input type="email" class="form-control is-valid" id="validationServer02" value="Otto" required> -->
+            {{form.email}}
+            {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                    <div id="validationServer03Feedback" class="invalid-feedback">
+                        {{error}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationServer02" class="form-label">Phone Number</label>
+            <!-- <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required> -->
+            {{form.phone}}
+            {% if form.phone.errors %}
+                {% for error in form.phone.errors %}
+                    <div id="validationServer03Feedback" class="invalid-feedback">
+                        {{error}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        
+
+        <div class="col-md-6">
+            <label for="validationServer03" class="form-label">City</label>
+            {{form.city}}
+            <!-- <input type="text" class="form-control is-invalid" id="validationServer03"
+                aria-describedby="validationServer03Feedback" required> -->
+            <div id="validationServer03Feedback" class="invalid-feedback">
+                Please provide a valid city.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="validationServer04" class="form-label">State</label>
+            {{ form.state }}
+            <!-- <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback"
+                required>
+                <option selected disabled value="">Choose...</option>
+                <option>...</option>
+            </select> -->
+            <div id="validationServer04Feedback" class="invalid-feedback">
+                Please select a valid state.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="validationServer05" class="form-label">Zip</label>
+            <!-- <input type="text" class="form-control is-invalid" id="validationServer05"
+                aria-describedby="validationServer05Feedback" required> -->
+                {{form.zip_code}}
+            <div id="validationServer05Feedback" class="invalid-feedback">
+                Please provide a valid zip.
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+    </form>
+    
+</div>
+
+<script src="../static/js/library/jquery-3.6.0.js"></script>
+
+{% endblock %}

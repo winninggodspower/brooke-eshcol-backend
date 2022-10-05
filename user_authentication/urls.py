@@ -12,6 +12,7 @@ urlpatterns = [
     path('register', views.register, name='register'),
     path('logout', views.logout_user, name='logout'),
     path('services', views.services, name='services'),
+    path('members', views.members, name='members'),
     path('newsub/', views.newSubscriber, name='newsub'),
     
     path("password_reset", views.password_reset_request, name="password_reset"),
