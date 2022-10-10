@@ -15,7 +15,7 @@ const headingItems = [
         left: '0%',
     },
     {
-        img : "../static/assets/img/hero-img2.png",
+        img : "../static/assets/img/tablet.jpg",
         headingText : "Let us help you acquire the right digital skills that are in global demand. ",
         pText: "we have  trained professionals with competent IT skills and knowledge. ",
         left: '0%',
