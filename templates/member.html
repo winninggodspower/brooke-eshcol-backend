@@ -6,15 +6,15 @@
 <title>Become A Member|Brookee-Shcol</title>
 
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
-<!-- <link rel="stylesheet" href="../static/css/services.css"> -->
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
 
 {% endblock %}
 {% block body %}
 
     {% include "page-section/navbar.html" %}
 
-<div class="container mt-5">
-
+<div class="container mt-5 ">
+    <h3 class="text-center text-primary mb-5 px-2">Become A Member Of The Community</h3>
     <form action="{% url 'members' %}" method="post" class="row g-3">
         {% csrf_token %}
         
@@ -113,8 +113,8 @@
             </div>
         </div>
 
-        <div class="col-12">
-            <button class="btn btn-primary" type="submit">Submit form</button>
+        <div class="col-12 mb-3">
+            <btn type="submit" id="become-a-member-btn" class="btn btn-light text-danger w-100 my-4">Become a member</btn>
         </div>
     </form>
     
