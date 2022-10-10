@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../static/css/home.css">
     <link rel="stylesheet" href="../static/css/services.css">
 
+    <link rel="preload" as="image" href="{% static 'assets/img/hero-img.png' %}">
+    <link rel="preload" as="image" href="{% static 'assets/img/hero-img2.png' %}">
+    <link rel="preload" as="image" href="{% static 'assets/img/hero-img3.png' %}">
+
     {% endblock %}
 {% block body %}
 
@@ -47,7 +51,7 @@
 
         <div class="circle-nav-container position-absolute mx-auto d-flex justify-content-center w-100">
             <span id="circle-nav1" class="circle-nav  rounded-circle d-block circle-nav-active"></span>
-            <span id="circle-nav2" class="circle-nav  rounded-circle d-block"></span>
+            <!-- <span id="circle-nav2" class="circle-nav  rounded-circle d-block"></span> -->
             <span id="circle-nav3" class="circle-nav  rounded-circle d-block"></span>
         </div>
     </header>
