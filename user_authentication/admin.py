@@ -7,5 +7,5 @@ User = get_user_model()
 
 
 # Register your models here.
-admin.site.register(User)
-admin.site.register(Member)
+admin.site.register(User) #user's model
+admin.site.register(Member) # Member model
