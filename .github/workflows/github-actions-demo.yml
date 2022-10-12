@@ -23,6 +23,6 @@ jobs:
             ls -al
       - name: move to repository folder and list files and sub directories
         run: |
-          cd /home/brookees/repositories/brooke-eschol-backend
-          ls -al
+          cd /home/brookees/repositories/brooke-eschol-backend && ls -al
+          
       - run: echo "🍏 This job's status is ${{ job.status }}."
