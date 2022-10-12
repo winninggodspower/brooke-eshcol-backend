@@ -9,7 +9,7 @@ let screenWidth = window.outerWidth
 
 const headingItems = [
     {
-        img : "../static/assets/img/hero-img.png",
+        img : img.attr("src"),
         headingText : "Entrust your digital challenges with the right professional IT solutions",
         pText: "Get high standard IT solutions , supplies and trainings.",
         left: '0%',
