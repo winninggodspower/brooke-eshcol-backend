@@ -22,7 +22,6 @@ jobs:
           password: ${{ secrets.HOST_PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            ls -al
             cd repositories/brooke-eschol-backend
             git pull origin master
 
