@@ -26,3 +26,6 @@ class Member(models.Model):
     city = models.CharField(max_length = 40)
     state = models.CharField(max_length = 40)
     zip_code = models.CharField(max_length = 20)
+
+    def __str__(self):
+        return self.first_name + ' ' + self.last_name

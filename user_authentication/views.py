@@ -172,7 +172,6 @@ def newSubscriber(request):
 
             messages.error(request, "invalid email address")
         
-    
     return redirect('home')
 
 def verification_email_sent(request):
@@ -183,7 +182,26 @@ def members(request):
         form = MemberForm(request.POST)
 
         if form.is_valid():
-            form.save()
+            member = form.save()
+            
+            # sending email to director notifying him that someone has becomed a member
+            username = f"{member.first_name} {member.last_name}"
+
+            subject = f"{username} Became a member in Brookeeshcol"
+            email_template_name = "become-member/become-member-email.txt"
+            email_content = {
+                'username': username,
+                "email": member.email,
+                'phone': member.phone,
+                'site_name': settings.SITE_NAME,
+                'member_id': member.id,
+                }
+            email = render_to_string(email_template_name, email_content)
+            try:
+                send_mail(subject, email, 'admin@example.com' , settings.ADMIN_EMAILS, fail_silently=False)
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+
             messages.success(request, "Successfully Beecomed a member of Brookeeshcol system limited")
             return redirect("home")
 

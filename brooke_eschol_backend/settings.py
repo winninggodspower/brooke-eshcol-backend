@@ -137,7 +137,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 DOMAIN = '127.0.0.1:8000'
-SITE_NAME = 'brookeshcol.com'
+SITE_NAME = 'brookeeshcol.com'
 PROTOCOL = 'http'
 
 # settings for verifying email
@@ -148,6 +148,7 @@ EMAIL_HOST_USER = config('EMAIL_ID')
 EMAIL_HOST_PASSWORD = config('EMAIL_PW')
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+ADMIN_EMAILS = ['contact@brookeeshcol.com']
 
 HTML_MESSAGE_TEMPLATE = "verify_email/email_message.html"
 

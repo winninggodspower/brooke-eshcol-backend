@@ -1,0 +1,4 @@
+{{username}} has succesfully became a member of brookeshcol system limited
+
+Give him/her a call at {{phone}}
+view his information from {{site_name}}/admin/user_authentication/member/{{member_id}}/change
