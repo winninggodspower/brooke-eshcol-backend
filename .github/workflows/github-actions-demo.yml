@@ -22,7 +22,7 @@ jobs:
           password: ${{ secrets.HOST_PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            source /home/brookees/virtualenv/repositories/brooke-eschol-backend/3.8/bin/activate && cd /home/brookees/repositories/brooke-eschol-backend
+            source /home/brookees/virtualenv/repositories/brooke-eschol-backend/3.8/bin/activate
             cd repositories/brooke-eschol-backend
             git pull origin master
             pip install -r requirements.txt
