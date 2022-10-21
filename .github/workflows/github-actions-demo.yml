@@ -25,6 +25,6 @@ jobs:
             source /home/brookees/virtualenv/repositories/brooke-eschol-backend/3.8/bin/activate && cd /home/brookees/repositories/brooke-eschol-backend
             cd repositories/brooke-eschol-backend
             git pull origin master
-            pip install requirements.txt
+            pip install -r requirements.txt
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
