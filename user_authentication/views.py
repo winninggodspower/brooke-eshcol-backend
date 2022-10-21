@@ -141,7 +141,7 @@ def password_reset_request(request):
                     }
                     email = render_to_string(email_template_name, email_content)
                     try:
-                        send_mail(subject, email, 'admin@example.com' , [user.email], fail_silently=False)
+                        send_mail(subject, email, 'contact@brookeeshcol.com' , [user.email], fail_silently=False)
                     except BadHeaderError:
                         return HttpResponse('Invalid header found.')
                     return redirect ("/password_reset/done/")
@@ -198,7 +198,7 @@ def members(request):
                 }
             email = render_to_string(email_template_name, email_content)
             try:
-                send_mail(subject, email, 'admin@example.com' , settings.ADMIN_EMAILS, fail_silently=False)
+                send_mail(subject, email, 'contact@brookeeshcol.com' , settings.ADMIN_EMAILS, fail_silently=False)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
 
