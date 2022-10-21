@@ -21,7 +21,7 @@ MESSAGE_TAGS = {
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ['localhost', 'brookeeshcol.com', 'www.brookeeshcol.com']
