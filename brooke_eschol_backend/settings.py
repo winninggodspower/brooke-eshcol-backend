@@ -17,11 +17,11 @@ MESSAGE_TAGS = {
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-a&2heu37huz!f(94b91v%%x^y5dwfzq@7*c0j(m3w4lse*c)4+'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-DEBUG_PROPAGATE_EXCEPTIONS = True
+DEBUG = True
+# DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ['localhost', 'brookeeshcol.com', 'www.brookeeshcol.com']
 
@@ -140,13 +140,13 @@ SITE_NAME = 'brookeshcol.com'
 PROTOCOL = 'http'
 
 # settings for verifying email
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'mail.brookeeshcol.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_ID')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PW')
 
-DEFAULT_FROM_EMAIL = 'contact@brookeshcol.com'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 HTML_MESSAGE_TEMPLATE = "verify_email/email_message.html"
 
