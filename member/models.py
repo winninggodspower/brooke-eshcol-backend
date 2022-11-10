@@ -1,3 +1,4 @@
+from email.policy import default
 import secrets
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
@@ -17,7 +18,7 @@ class Member(models.Model):
         return self.first_name + ' ' + self.last_name
 
 class Payment(models.Model):
-    amount = models.PositiveIntegerField()
+    amount = models.PositiveIntegerField(default = 20_000)
     ref = models.CharField(max_length=200)
     email = models.EmailField()
     verified = models.BooleanField(default=False)

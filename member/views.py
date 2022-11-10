@@ -10,9 +10,11 @@ from django.core.mail import send_mail, BadHeaderError
 from .forms import MemberForm
 from django.views import View
 
+from .models import Payment
 # Create your views here.
 
 class members(View):
+
     def post(self, request):
         form = MemberForm(request.POST)
 
@@ -58,4 +60,6 @@ class members(View):
 
         return render(request, 'member.html', {'form': form})
 
-   
+
+def initiate_payment(request):
+    pass
