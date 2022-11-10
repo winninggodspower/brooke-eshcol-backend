@@ -8,11 +8,12 @@ from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
 
 from .forms import MemberForm
+from django.views import View
 
 # Create your views here.
 
-def members(request):
-    if request.method == "POST":
+class members(View):
+    def post(self, request):
         form = MemberForm(request.POST)
 
         if form.is_valid():
@@ -38,14 +39,23 @@ def members(request):
 
             messages.success(request, "Successfully Becomed a member of Brookeeshcol system limited")
             return redirect("home")
+        
+        # adding the is-invalid class to field with errors
+        for field in form.errors:
+            print(field)
+            form[field].field.widget.attrs['class'] += ' is-invalid'
 
-        else:
-             # adding the is-invalid class to field with errors
-            for field in form.errors:
-                print(field)
-                form[field].field.widget.attrs['class'] += ' is-invalid'
+        return render(request, 'member.html', {"form": form})
 
-            return render(request, 'member.html', {'form': form})
 
-    form = MemberForm()
-    return render(request, 'member.html', {"form": form})
+    def get(self, request):
+        form = MemberForm()
+
+        # adding the is-invalid class to field with errors
+        for field in form.errors:
+            print(field)
+            form[field].field.widget.attrs['class'] += ' is-invalid'
+
+        return render(request, 'member.html', {'form': form})
+
+   
