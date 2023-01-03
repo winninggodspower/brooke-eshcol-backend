@@ -45,7 +45,7 @@ header{
     border-radius: 5px !important;
     font-size: 16px !important;
     width: 175px;
-    max-width: 45% !important;
+    max-width: 170px !important;
     height: 54px;
     border: 1px solid #A00716 !important;
 }
@@ -287,6 +287,12 @@ header{
 }
 
  /* media query for responsive design */
+@media (max-width: 1000px){
+    .hero-btns a button.btn{
+        max-width: 145px !important;
+    }
+}
+
  @media (max-width: 800px) {
     .hero-text-container{
         text-align: center;
@@ -338,6 +344,12 @@ header{
 
     #connect-paragraph{
         text-align: justify;
+    }
+}
+
+@media (max-width: 340px) {
+    .hero-btns a button.btn, .hero-btns .btn{
+        width: fit-content !important;
     }
 }
 

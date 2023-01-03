@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
 from django.template.loader import render_to_string
 from django.contrib import messages
 
@@ -61,5 +61,28 @@ class members(View):
         return render(request, 'member.html', {'form': form})
 
 
-def initiate_payment(request):
-    pass
+# Response blueprint
+# message: "Approved"
+# redirecturl: "?trxref=2182893&reference=2182893"
+# reference: "2182893"
+# status: "success"
+# trans: "2306170385"
+# transaction: "2306170385"
+# trxref: "2182893"
+
+
+def initiate_payment(request: HttpRequest) -> HttpResponse:
+    if request.method == 'POST':
+        payment = Payment(request.POST)
+        payment = payment.save()
+
+        if not payment.verify_payment():
+            messages.error('payment unverified, please make a valid payment')
+            messages.delete()
+            return redirect('members')
+
+        else:
+            member = MemberForm(request.POST.get('personal_info'))
+            member.save()
+            messages.success(request, "Successfully Becomed a member of Brookeeshcol system limited")
+            return redirect('home')
