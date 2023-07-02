@@ -1,0 +1,355 @@
+@import url("./main.1c0719c9ba5e.css");
+
+html{
+    scroll-behavior: smooth;
+}
+
+section, *{
+    scroll-behavior: smooth;
+}
+
+header{
+    background: #045DA02E !important;
+ }
+ 
+ 
+ nav{
+     border-bottom: 1px solid #045DA054
+ }
+ 
+ h1{
+     line-height: 54px;
+     font-size: 36px;
+ }
+ 
+ .hero-section{
+     height: 568px;
+ }
+
+ #hero-heading{
+    max-width: 100% !important;
+ }
+ 
+ .hero-text p{
+     font-size: 16px;
+     margin-top: 16px;
+     max-width: 100vw !important;
+ }
+ 
+ .hero-btns{
+     margin-top: 55px;
+ }
+ 
+ .hero-btns a button.btn, 
+ .hero-btns .btn {
+    border-radius: 5px !important;
+    font-size: 16px !important;
+    width: 175px;
+    max-width: 170px !important;
+    height: 54px;
+    border: 1px solid #A00716 !important;
+}
+ 
+
+ .hero-btns a button.btn:hover, 
+ .hero-btns .btn:hover{
+    color: white !important;
+ }
+ 
+ 
+.hero-img-container{
+    z-index: -1;
+    left: -50%;
+}
+ 
+
+ /* styling for the 3 dots */
+ .circle-nav-container{
+    column-gap: 10px;
+    bottom: 60px !important;
+ }
+ 
+ .circle-nav{
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    background: #A0071694;
+ }
+
+ .circle-nav:hover{
+    background: var(--danger);
+ }
+ 
+ .circle-nav-active{
+    background-color: var(--danger);
+ }
+
+ .about-section{
+    padding-top: 19px;
+    padding-bottom: 77px;
+    background: url("../assets/img/mision-vision-bg.7beb4bac9271.png");
+    background-clip: border-box;
+ }
+
+ .meet-us-texts{
+    width: fit-content !important;
+    margin: auto;
+ }
+ 
+ .meetus{
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+    border-bottom-width: 2px !important;
+ }
+
+ 
+ .line{
+    height: 2px;
+    display: block;
+    margin-top: 2px !important;
+    margin: auto;
+
+ }
+
+
+ .about-text{
+    min-height: 90px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 23px;
+    text-align: justify;
+    margin-top: 40px;
+
+ }
+
+ .mision-container{
+    height: 120px;
+    width: 120px;
+ }
+
+
+ #mision-statement, #vision-statement{
+    max-width: 400px;
+    margin-top: 10px;
+ }
+
+
+#our-service{
+    padding-top: 25px;
+}
+
+#service-container{
+    flex-wrap: wrap;
+}
+
+.service-icon{
+    height: 115.72054290771484px;
+    width: 94.81735229492188px;
+
+}
+
+.services{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+}
+
+.learn-more-icon{
+    margin-bottom: 76px;
+}
+
+
+#membership-package-container{
+    background: #045DA0;
+    padding-top: 73px;
+}
+
+#membership-heading{
+    width: 400px;
+    max-width: 100%;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 54px;
+
+}
+
+.package-container{
+    width: 200px ;
+    max-width: 100% !important;
+    margin-bottom: 35px;
+}
+
+.package-description{
+    height: 144px;
+}
+
+.package{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.price{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.price-duration{
+    font-size: 10px;
+    font-weight: 400;
+}
+
+#become-a-member-btn{
+    height: 53.19403076171875px;
+    width: 200px;
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+
+}
+
+
+#kids-img{
+    margin-top: 95px;
+    margin-bottom: 95px;
+}
+
+#kids-club-heading{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 54px;
+}
+
+#kids-club-text{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    max-width: 100% !important;
+    text-align: justify;
+    padding-right: 5px;
+    margin-top: 19px;
+    margin-bottom: 0px;
+}
+
+#kids-club-btn{
+    height: 54px;
+    width: 175px;
+    border-radius: 5px;
+    margin-top: 47px;
+}
+
+
+#connect-and-grow{
+    background: url("../assets/img/connect-and-grow-bg.8cf6310f5560.png"),rgba(160, 7, 22, 0.38);
+    background-blend-mode:darken;
+    height: 500px;
+    margin-top: 45px;
+}
+
+#connect-heading{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 54px;
+}
+
+#connect-paragraph{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 33px;
+}
+
+
+
+#contact-us-text{
+    margin-top: 30px;
+    margin-bottom: 33px;
+}
+
+
+#follow-btn:hover{
+    color: white !important;
+}
+
+.talk-to-us-btn{
+    height: 51.14556121826172px;
+    width: 175px;
+    border-radius: 5px;
+
+}
+
+#contact-btn-container{
+    margin-bottom: 47px;
+}
+
+ /* media query for responsive design */
+@media (max-width: 1000px){
+    .hero-btns a button.btn{
+        max-width: 145px !important;
+    }
+}
+
+ @media (max-width: 800px) {
+    .hero-text-container{
+        text-align: center;
+    }
+    .hero-btns{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 5px;
+    }
+
+    .hero-img-container{
+    background: #045DA02E !important;
+    left: -85%;
+    }
+
+    .hero-img{
+    background: #045DA02E !important;
+    }
+
+    .navbar-nav{
+        text-align: center;
+    }
+    .nav-link{
+        color: var(--primary) !important;
+        font-weight: 500 !important;
+    }
+
+    #membership-heading{
+        text-align: center !important;
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 39px;
+
+        text-align: center;
+    }
+
+    #membership-description{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+
+    }
+
+    #kids-club-text{
+        margin-left: 40px;
+        margin-right: 42px;
+    }
+
+    #connect-paragraph{
+        text-align: justify;
+    }
+}
+
+@media (max-width: 340px) {
+    .hero-btns a button.btn, .hero-btns .btn{
+        width: fit-content !important;
+    }
+}
+
