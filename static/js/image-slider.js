@@ -6,7 +6,6 @@ let animating = false
 let screenWidth = window.outerWidth
 
 
-
 const headingItems = [
     {
         img : img.attr("src"),
@@ -38,8 +37,7 @@ const ChangeHeroSection = (element)=>{
 
     // fading the elements to be changed out and;
     //changing element content
-    //fadein the element that has been changed
-    animating = true
+    //fadein the element that has been change
     img.fadeOut(()=>{
         img.attr('src', currentHeadingItem.img)
         $('.hero-img').css('left', currentHeadingItem.left)
@@ -55,23 +53,42 @@ const ChangeHeroSection = (element)=>{
             animating = false
         })
     })
-    
-    
-    
-    
-   
 
 }
 
+// click event listener to fire the FadeTransition
 $('.circle-nav').click((e)=>{
     if (animating){
         return
     }
-    const element = $(e.currentTarget)
+    const clickedCircle = $(e.currentTarget)
+    HandleHeadingFadeTransition(clickedCircle)
+})
+
+
+// function that starts the fade transition
+const HandleHeadingFadeTransition = (clickedCircle)=>{
+    animating = true
 
     // changing active icon to the one clicked
     $('.circle-nav').css('background', '#A0071694')
-    element.css('background', 'var(--danger)')
+    clickedCircle.css('background', 'var(--danger)')
 
-    ChangeHeroSection(element)
-})
+    ChangeHeroSection(clickedCircle)
+}
+
+// firing the fade transition function on intervals
+let circleNavId = 1;
+setInterval(() => {
+    if (circleNavId <= 2) {
+        circleNavId ++
+    }else{
+        circleNavId = 1;
+    }
+
+    if (animating){
+        return
+    }
+
+    HandleHeadingFadeTransition($(`#circle-nav${circleNavId}`))
+}, 5000);
