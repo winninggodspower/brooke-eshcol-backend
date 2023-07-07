@@ -78,6 +78,7 @@ const HandleHeadingFadeTransition = (clickedCircle)=>{
 }
 
 // firing the fade transition function on intervals
+const transitionDelayTime = 15000
 let circleNavId = 1;
 setInterval(() => {
     if (circleNavId <= 2) {
@@ -91,4 +92,4 @@ setInterval(() => {
     }
 
     HandleHeadingFadeTransition($(`#circle-nav${circleNavId}`))
-}, 5000);
+}, transitionDelayTime);
