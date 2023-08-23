@@ -4,6 +4,10 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 
+from wagtail.admin import urls as wagtailadmin_urls
+from wagtail import urls as wagtail_urls
+from wagtail.documents import urls as wagtaildocs_urls
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('user_authentication.urls')),
@@ -16,6 +20,10 @@ urlpatterns = [
     path('verification/', include('verify_email.urls')),
 
     path('accounts/', include('allauth.urls')),
+
+    path('cms/', include(wagtailadmin_urls)),
+    path('documents/', include(wagtaildocs_urls)),
+    path('pages/', include(wagtail_urls)),
 ]
 
 handler404 = 'user_authentication.views.error_404_view'
