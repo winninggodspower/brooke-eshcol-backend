@@ -21,7 +21,7 @@ MESSAGE_TAGS = {
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if config('SECRET_KEY') == "True" else False
+DEBUG = True if config('DEBUG') == "True" else False
 
 SITE_NAME_BASE_URL = "https://brookeeshcol.com"
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'user_authentication',
     'member',
+    'blog',
 
     'crispy_forms',
     "phonenumber_field",
@@ -190,6 +191,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# wagtail configurations
 WAGTAIL_SITE_NAME = 'Brooke-Eshcol'
 WAGTAILADMIN_BASE_URL = 'http://example.com'
 
