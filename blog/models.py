@@ -26,6 +26,7 @@ class BlogIndexPage(Page):
 class BlogPage(Page):
 
     # Database fields
+    intro = models.TextField(help_text="Text to describe the page")
     body = RichTextField()
     date_created = models.DateField("Post date")
     image = models.ForeignKey(
