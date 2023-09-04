@@ -1,3 +1,5 @@
+{% load static %}
+
 <footer>
 
     <section>
@@ -64,13 +66,13 @@
                         <h5 class="footer-header">Follow us</h5>
                         <ul class="nav justify-content-between list-unstyled d-flex">
                             <li class=""><a class="" href="https://www.facebook.com/brookeeshcolsystems"><img
-                                        src="../static/assets/img/follow-icon/facebook-logo.png" alt=""></a></li>
-                            <li class=""><a class="https://instagram.com" href="#"><img
-                                        src="../static/assets/img/follow-icon/instagram-logo.jpg" alt=""></a></li>
+                                        src="{% static 'assets/img/follow-icon/facebook-logo.png'  %}" alt=""></a></li>
+                            <li class=""><a class="https://www.instagram.com/brookeeshcolsystems/" href="#"><img
+                                        src="{% static 'assets/img/follow-icon/instagram-logo.jpg' %}" alt=""></a></li>
                             <li class=""><a class="" href="https://www.linkedin.com/in/brooke-eshcol-systems-5731ba242/"><img
-                                        src="../static/assets/img/follow-icon/linkedin-icon.png" alt=""></a></li>
+                                        src="{% static 'assets/img/follow-icon/linkedin-icon.png' %}" alt=""></a></li>
                             <li class=""><a class="" href="https://twitter.com/BrookeEshcol"><img
-                                        src="../static/assets/img/follow-icon/twitter-logo.jpg" alt=""></a></li>
+                                        src="{% static 'assets/img/follow-icon/twitter-logo.jpg' %}" alt=""></a></li>
                         </ul>
 
                     </div>
@@ -83,7 +85,7 @@
         <hr class="p-0 m-0 bg-white text-white">
 
         <div id="copyright-claim-section" class="bg-primary text-white">
-            <p class="text-center mb-0">Copyright 2022 <img src="../static/assets/img/follow-icon/noun-copyright-img.png" alt=""> Brooke-eshcol System Limited</p>
+            <p class="text-center mb-0">Copyright 2022 <img src="{% static 'assets/img/follow-icon/noun-copyright-img.png' %}" alt=""> Brooke-eshcol System Limited</p>
         </div>
     </section>
 
