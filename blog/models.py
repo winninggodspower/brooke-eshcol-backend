@@ -56,3 +56,5 @@ class BlogPage(Page):
         MultiFieldPanel(Page.promote_panels, "Common page configuration"),
         FieldPanel('image'),
     ]
+
+    parent_page_types = ['blog.BlogIndexPage']
