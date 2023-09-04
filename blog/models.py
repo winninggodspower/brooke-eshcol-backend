@@ -47,6 +47,7 @@ class BlogPage(Page):
 
     # Editor panels configuration
     content_panels = Page.content_panels + [
+        FieldPanel('intro'),
         FieldPanel('date_created'),
         FieldPanel('body'),
         FieldPanel('image'),
