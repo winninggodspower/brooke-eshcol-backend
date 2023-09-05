@@ -277,6 +277,28 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '2ede2b3c549f500e6b7cea56aa027c09' # App Secret
 SOCIALACCOUNT_LOGIN_ON_GET=True
 
 
+#logger configuration
+import os
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+         "file": {
+            "level": "DEBUG",
+            "class": "logging.FileHandler",
+            "filename": os.path.join(BASE_DIR , "debug.log")
+        },
+    },
+    "root": {
+        "handlers": ["console", "file"],
+        "level": "WARNING",
+    },
+}
+
 # Paystack public and private keys
 PAYSTACK_SECRET_KEY = config('PAYSTACK_SECRET_KEY')
 PAYSTACK_PUBLIC_KEY = config('PAYSTACK_PUBLIC_KEY')
